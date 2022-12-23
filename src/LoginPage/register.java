@@ -127,10 +127,10 @@ public class register extends javax.swing.JFrame {
 
         AddressLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         AddressLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        AddressLabel.setText("Address");
+        AddressLabel.setText("Alamat");
 
         buttonGroup1.add(buyerRadioButton);
-        buyerRadioButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        buyerRadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buyerRadioButton.setSelected(true);
         buyerRadioButton.setText("Buyer");
         buyerRadioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +140,7 @@ public class register extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(sellerRadioButton);
-        sellerRadioButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        sellerRadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         sellerRadioButton.setText("Seller");
         sellerRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,31 +153,32 @@ public class register extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(btn_register, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(56, 56, 56)
-                            .addComponent(AccessTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(41, 41, 41)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(AddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(PasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(UserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(AccessTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(UserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_register, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txt_username, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(buyerRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(sellerRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(7, 7, 7))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,9 +202,9 @@ public class register extends javax.swing.JFrame {
                     .addComponent(buyerRadioButton)
                     .addComponent(sellerRadioButton))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_register, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_register, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70))
         );
 
@@ -214,16 +215,15 @@ public class register extends javax.swing.JFrame {
         String username  = txt_username.getText();
         String password   = new String(txt_password.getPassword());
         String address    = txt_address.getText();
-        int accesstype = new ;
-//        boolean is_buyer   = buyerRadioButton.isSelected();
-//        boolean is_seller  = sellerRadioButton.isSelected();
+        boolean is_buyer   = buyerRadioButton.isSelected();
+        boolean is_seller  = sellerRadioButton.isSelected();
 
         if( username.isEmpty() ||
             password.isEmpty() ||
             address.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please ensure that all fields all filled.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Harap pastikan bahwa semua bidang semua diisi!", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            userRegister( username, password, address, accesstype);
+            userRegister( username, password, address, is_buyer, is_seller);
         }
     }//GEN-LAST:event_btn_registerActionPerformed
 
@@ -313,7 +313,7 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 
-    private void userRegister( String username, String password, String address, int accesstype) {
+    private void userRegister( String username, String password, String address, boolean is_buyer, boolean is_seller) {
         Connection dbconn = (new DBConnection()).connectDB();
 
         try {
@@ -324,7 +324,7 @@ public class register extends javax.swing.JFrame {
                 ResultSet res = st.executeQuery();
                 
                 if(res.next()) {
-                    JOptionPane.showMessageDialog(this, "Username is already in use. Please choose another.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Username sudah terdaftarkan. Silakan pilih yang lain!", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     PreparedStatement st2;
                     st2 = dbconn.prepareStatement("INSERT INTO users ( username, password, address, accesstype) VALUES ( ?, ?, ?, ?)");
@@ -335,15 +335,14 @@ public class register extends javax.swing.JFrame {
                              
             
                     
-                    if(buyerRadioButton.isSelected()) {
-                        accessType = 1;
-                    }
+                    int accessType = 1;
+                    if(is_seller) { accessType = 2; }
 
-                    st2.setInt(4, accessType);   
+                    st2.setInt(7, accessType); 
 
                     int res2 = st2.executeUpdate();
 
-                    JOptionPane.showMessageDialog(this, "User account created.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Registrasi akun berhasil!.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     
                     txt_username.setText(null);
                     txt_password.setText(null);
