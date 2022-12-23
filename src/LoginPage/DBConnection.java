@@ -27,10 +27,10 @@ public class DBConnection {
         String url="jdbc:mysql://localhost:3306/finalproject_pbo";        
         try{
           DBConnection = DriverManager.getConnection(url,"root","");
-          System.out.println("Database Connected");
+          System.out.println("Database Tersambung!");
         }
         catch(SQLException se){
-          System.out.println("Database Not Found");  
+          System.out.println("Database Tidak Ditemukan!");  
         }
         return DBConnection;
         

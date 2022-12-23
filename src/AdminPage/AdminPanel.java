@@ -85,6 +85,7 @@ public class AdminPanel extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("Admin Dashboard");
 
+        LogoutButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         LogoutButton.setText("Logout");
         LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,13 +102,13 @@ public class AdminPanel extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
-                .addGap(36, 36, 36))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LogoutButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -125,7 +126,7 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel2.setText("Name");
+        jLabel2.setText("Nama");
 
         NameTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -142,7 +143,7 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel5.setText("Price");
+        jLabel5.setText("Harga");
 
         PriceTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         PriceTextField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
@@ -154,7 +155,7 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel6.setText("Quantity");
+        jLabel6.setText("Stok");
 
         QuantityTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         QuantityTextField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
@@ -165,7 +166,7 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 194, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,16 +182,16 @@ public class AdminPanel extends javax.swing.JFrame {
             }
         });
 
-        ClearPageButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        ClearPageButton.setText("Clear Page");
+        ClearPageButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ClearPageButton.setText("Clear");
         ClearPageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClearPageButtonActionPerformed(evt);
             }
         });
 
-        CreateItemButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        CreateItemButton.setText("Create Item");
+        CreateItemButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        CreateItemButton.setText("Tambahkan Barang");
         CreateItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreateItemButtonActionPerformed(evt);
@@ -216,16 +217,15 @@ public class AdminPanel extends javax.swing.JFrame {
                     .addComponent(QuantityTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                     .addComponent(PriceTextField))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ClearPageButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CreateItemButton))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(PhotoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(CreateItemButton)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(PhotoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton1))
+                        .addComponent(ClearPageButton)))
                 .addGap(20, 20, 20))
         );
         jPanel1Layout.setVerticalGroup(
@@ -251,7 +251,7 @@ public class AdminPanel extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DescriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(154, Short.MAX_VALUE))
+                        .addContainerGap(155, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -259,9 +259,9 @@ public class AdminPanel extends javax.swing.JFrame {
                             .addComponent(PhotoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ClearPageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CreateItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ClearPageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CreateItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30))))
         );
 
@@ -273,7 +273,7 @@ public class AdminPanel extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Price", "Quantity Available"
+                "ID", "Nama", "Harga", "Stok"
             }
         ) {
             Class[] types = new Class [] {
@@ -297,6 +297,10 @@ public class AdminPanel extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(ExistingInventoryTable);
+        if (ExistingInventoryTable.getColumnModel().getColumnCount() > 0) {
+            ExistingInventoryTable.getColumnModel().getColumn(0).setMinWidth(35);
+            ExistingInventoryTable.getColumnModel().getColumn(0).setMaxWidth(35);
+        }
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -304,13 +308,13 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel8.setText("Name");
+        jLabel8.setText("Nama");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel9.setText("Price");
+        jLabel9.setText("Harga");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel10.setText("Quantity");
+        jLabel10.setText("Stok");
 
         EI_IdTextField.setEditable(false);
         EI_IdTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -411,14 +415,14 @@ public class AdminPanel extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        jTabbedPane1.addTab("Existing Inventory", jPanel3);
+        jTabbedPane1.addTab("Inventory", jPanel3);
 
         PreviousSalesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Sale ID", "User Name", "Total Spent", "Date"
+                "Sale ID", "Username", "Total Spent", "Tanggal"
             }
         ) {
             Class[] types = new Class [] {
@@ -438,7 +442,8 @@ public class AdminPanel extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(PreviousSalesTable);
         if (PreviousSalesTable.getColumnModel().getColumnCount() > 0) {
-            PreviousSalesTable.getColumnModel().getColumn(0).setResizable(false);
+            PreviousSalesTable.getColumnModel().getColumn(0).setMinWidth(75);
+            PreviousSalesTable.getColumnModel().getColumn(0).setMaxWidth(75);
             PreviousSalesTable.getColumnModel().getColumn(1).setResizable(false);
             PreviousSalesTable.getColumnModel().getColumn(2).setResizable(false);
             PreviousSalesTable.getColumnModel().getColumn(3).setResizable(false);
@@ -461,7 +466,7 @@ public class AdminPanel extends javax.swing.JFrame {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Sales History", jPanel4);
+        jTabbedPane1.addTab("Riwayat Penjualan", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -715,7 +720,6 @@ public class AdminPanel extends javax.swing.JFrame {
                 st.setString(1, itemName);
 
                 ResultSet res = st.executeQuery();
-                st.close();
                 if(res.next()) {
                     JOptionPane.showMessageDialog(this, "Item already exists in the database.", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
@@ -756,7 +760,6 @@ public class AdminPanel extends javax.swing.JFrame {
 
             ResultSet res = st.executeQuery();
             
-            st.close();
             while(res.next()) {
                 rowData[0] = res.getInt("id");
                 rowData[1] = res.getString("name");
@@ -785,7 +788,6 @@ public class AdminPanel extends javax.swing.JFrame {
                 st.setInt(3, itemQuantity);
                 st.setInt(4, itemId);
                 
-                st.close();
                 int res = st.executeUpdate();
 
                 JOptionPane.showMessageDialog(this, "Item updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
@@ -812,7 +814,6 @@ public class AdminPanel extends javax.swing.JFrame {
         try {
             PreparedStatement st = dbconn.prepareStatement("SELECT * FROM sales ORDER BY id DESC");
 
-            st.close();
             ResultSet res = st.executeQuery();
 
             while(res.next()) {

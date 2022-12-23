@@ -141,25 +141,21 @@ public class login extends javax.swing.JFrame {
                         .addGap(3, 3, 3)))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txt_username, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txt_password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn_register, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_register, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_username)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(buyerRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(sellerRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btn_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(53, 53, 53))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(buyerRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(sellerRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,15 +197,13 @@ public class login extends javax.swing.JFrame {
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         String username  = txt_username.getText();
         String password   = new String(txt_password.getPassword());
-        boolean is_buyer   = buyerRadioButton.isSelected();
-        boolean is_seller  = sellerRadioButton.isSelected();
         
         if(username.isEmpty() ||
            password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Username / Password tidak boleh dikosongi!.", "", JOptionPane.ERROR_MESSAGE);
         } else {
             try {
-                userlogin(username, password, is_buyer, is_seller);
+                userlogin(username, password);
             } catch (SQLException ex) {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -245,20 +239,17 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
-    private void userlogin(String username, String password, boolean is_buyer, boolean is_seller) throws SQLException {
+    private void userlogin(String username, String password) throws SQLException {
         Connection dbconn = new DBConnection().connect();
         
-        int accessType = 1;
-        if(is_seller) { accessType = 2; }
         
        try {
-            PreparedStatement st = dbconn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ? AND accesstype = ?");
+            PreparedStatement st = dbconn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
             
             st.setString(1, username);
             st.setString(2, password);
-            st.setInt(3, accessType);
             
-            st.close();
+            
             ResultSet res = st.executeQuery();
 
             if(res.next()) {
@@ -266,18 +257,19 @@ public class login extends javax.swing.JFrame {
                 dispose();
                 this.setVisible(false);
                 
-                if(accessType == 1) {
+                if(res.getString("accesstype" = "admin")) {
+                    AdminPanel adminPanelInstance = new AdminPanel();
+                    adminPanelInstance.setLocationRelativeTo(null);
+                    adminPanelInstance.setTitle("Dashboard");
+                    adminPanelInstance.setVisible(true);
+                    
+                } else {
                     Cart ShoppingCartInstance = new Cart(username);
 
                     Dashboard dashBoardInstance = new Dashboard(ShoppingCartInstance);
                     dashBoardInstance.setLocationRelativeTo(null);
                     dashBoardInstance.setTitle("Dashboard");
                     dashBoardInstance.setVisible(true);
-                } else {
-                    AdminPanel adminPanelInstance = new AdminPanel();
-                    adminPanelInstance.setLocationRelativeTo(null);
-                    adminPanelInstance.setTitle("Dashboard");
-                    adminPanelInstance.setVisible(true);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid username and/or password.", "", JOptionPane.ERROR_MESSAGE);

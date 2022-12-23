@@ -320,7 +320,6 @@ public class register extends javax.swing.JFrame {
                 PreparedStatement st = dbconn.prepareStatement("SELECT * FROM users WHERE username = ?");
             
                 st.setString(1, username);
-                st.close();
                 ResultSet res = st.executeQuery();
                 
                 if(res.next()) {
